@@ -1,0 +1,60 @@
+:root {
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --background: #f8fafc;
+  --surface: #fff;
+  --text: #1e293b;
+  --border: #e5e7eb;
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.app-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 2rem 0 1.5rem 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+.dashboard-error {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.user-list-virtualized {
+  width: 100%;
+  max-width: 900px;
+  height: 700px;
+  margin: 0 auto;
+}
