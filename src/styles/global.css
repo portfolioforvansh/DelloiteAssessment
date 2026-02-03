@@ -5,7 +5,7 @@
   --surface: #fff;
   --text: #1e293b;
   --border: #e5e7eb;
-  --radius: 10px;
+  --radius: 12px;
   --shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
@@ -20,6 +20,7 @@ body {
   background: var(--background);
   color: var(--text);
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 .app-container {
@@ -30,16 +31,49 @@ body {
 .app-header {
   background: var(--primary);
   color: #fff;
-  padding: 2rem 0 1.5rem 0;
+  padding: 2.5rem 0 2rem 0;
   text-align: center;
   box-shadow: var(--shadow);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.professional-header {
+  background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+  color: #fff;
+  padding: 2.2rem 0 1.5rem 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  border-bottom: 3px solid #3b82f6;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.2rem;
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #dbeafe;
+  letter-spacing: 0.2px;
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem 2rem 1rem;
+  padding: 0 1.5rem 2rem 1.5rem;
 }
 
 .dashboard-error {

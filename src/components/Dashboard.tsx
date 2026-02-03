@@ -40,14 +40,14 @@ const Dashboard: React.FC = () => {
 
   return (
     <section className="dashboard">
-      <h2 className="dashboard-title">User List</h2>
+      <h2 className="dashboard-title">User List </h2>
       {loadingUsers && <div className="dashboard-loading">Loading users...</div>}
       {errorUsers && <div className="dashboard-error">{errorUsers}</div>}
       {!loadingUsers && !errorUsers && (
-        <div className="user-list-virtualized">
+        <div className="user-list-virtualized professional-scroll">
           <List
             height={600}
-            width={800}
+            width={820}
             itemCount={users.length}
             itemSize={90}
             itemData={users}
@@ -58,22 +58,24 @@ const Dashboard: React.FC = () => {
       )}
 
       <section className="dashboard-analytics">
-        <h3>Other Data (Fetched Asynchronously)</h3>
-        {apiConfigs.slice(1).map((api, idx) => {
-          const state = apiStates[idx] || { loading: true, error: null, data: null };
-          return (
-            <div key={api.name} className="dashboard-api-block">
-              <strong>{api.name} </strong>
-              {state.loading && <span className="dashboard-loading">Loading...</span>}
-              {state.error && <span className="dashboard-error">{state.error}</span>}
-              {state.data && (
-                <span className="dashboard-success">
-                  Loaded {Array.isArray(state.data) ? state.data.length : "data"} records.
-                </span>
-              )}
-            </div>
-          );
-        })}
+        <h3 className="dashboard-analytics-title">Other Data (Fetched Asynchronously)</h3>
+        <div className="dashboard-api-list">
+          {apiConfigs.slice(1).map((api, idx) => {
+            const state = apiStates[idx] || { loading: true, error: null, data: null };
+            return (
+              <div key={api.name} className="dashboard-api-block">
+                <span className="dashboard-api-name">{api.name}</span>
+                {state.loading && <span className="dashboard-loading">Loading...</span>}
+                {state.error && <span className="dashboard-error">{state.error}</span>}
+                {state.data && (
+                  <span className="dashboard-success">
+                    Loaded {Array.isArray(state.data) ? state.data.length : "data"} records.
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </section>
     </section>
   );

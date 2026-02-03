@@ -4,8 +4,11 @@ import Dashboard from "./components/Dashboard";
 
 const App: React.FC = () => (
   <div className="app-container">
-    <header className="app-header">
-      <h1>User Dashboard Assessment</h1>
+    <header className="app-header professional-header">
+      <div className="header-content">
+        <h1 className="header-title">User Dashboard</h1>
+        <span className="header-subtitle">Assessment & Data Visualization</span>
+      </div>
     </header>
     <main>
       <Dashboard />
